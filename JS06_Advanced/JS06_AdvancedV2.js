@@ -56,17 +56,29 @@ document.addEventListener("DOMContentLoaded", function() {
             "read": true,
             "cover": "media/img/50HTML_Exc.jpg"
         }
-        
     ]`;
     let myobj = JSON.parse(books)
     // Iterate through the array of books
     myobj.forEach(book => {
-        // Create a paragraph element for each book
-        const bookElement = document.createElement("p");
-    
-        
-        // Set the content of the paragraph with book title and author
-        bookElement.textContent = `${book.title} by ${book.author}`;
+        // Create a div element for each book
+        const bookElement = document.createElement("div");
+        bookElement.classList.add("book");
+
+        // Create a div for book info
+        const bookInfo = document.createElement("div");
+        bookInfo.classList.add("book-info");
+
+        // Set the content of the div with book title and author
+        const titleElement = document.createElement("div");
+        titleElement.classList.add("title");
+        titleElement.textContent = `${book.title} by`;
+
+        const authorElement = document.createElement("div");
+        authorElement.classList.add("author");
+        authorElement.textContent = book.author;
+
+        bookInfo.appendChild(titleElement);
+        bookInfo.appendChild(authorElement);
 
         // Create an image element for the book cover
         const coverImage = document.createElement("img");
@@ -75,8 +87,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Add appropriate style based on whether the book has been read or not
         if (book.read) {
-            bookElement.classList.add("read");
+            bookElement.classList.add("true");
+        } else {
+            bookElement.classList.add("false");
         }
+
+        // Append the book info to the book element
+        bookElement.appendChild(bookInfo);
 
         // Append the book element to the book list
         bookList.appendChild(bookElement);

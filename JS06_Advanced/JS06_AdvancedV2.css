@@ -1,0 +1,42 @@
+/* Add your CSS styles here */
+/* For creating a grid, you can use CSS Grid or Flexbox */
+#book-list {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-gap: 20px;
+}
+
+.book {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.book img {
+    max-width: 100%;
+    height: auto;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    width: 200px;
+    word-wrap: break-word;
+}
+
+.author {
+    width: 200px;
+    word-wrap: break-word;
+}
+
+.true {
+    color: green;
+}
+
+.false {
+    color: red;
+}
