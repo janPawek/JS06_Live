@@ -1,0 +1,13 @@
+.book {
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.book img {
+    max-width: 100px;
+}
+
+.read {
+    background-color: lightgreen;
+}
